@@ -1,24 +1,39 @@
-# beekirby
 
-## Project setup
-```
-yarn install
+Yo. Ta quête commence maintenant. Pour ce faire, nous te fournissons un inventaire de premier ordre :
+- un squelette composé d'un front Vue 3 et d'un serveur socketio.
+- des assets à utiliser - ou pas
+- un design à utiliser - ou pas
+
+
+Ta mission si tu l'acceptes sera d'améliorer le projet tout en répondant aux demandes de notre ~~tyran~~ glorious leader.
+
+Bon courage capitaine.
+
+------------------
+
+## Instructions pour bien démarrer ( ^_^)／
+
+Installez les dependances de chaque partie du projet
+
+``` bash
+npm install
+cd kirbee-front && npm install
+cd kirbee-server && npm install
 ```
 
-### Compiles and hot-reloads for development
+## Instructions pour lancer le jeu
+
+Depuis la racine du projet
+
 ```
-yarn serve
+npm run dev
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+Le front se lance sur http://localhost:8080 et le serveur sur http://localhost:3006... si tout va bien •ᴗ•.
 
-### Lints and fixes files
-```
-yarn lint
-```
+Voila. 
+That's all.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+---
+
+
