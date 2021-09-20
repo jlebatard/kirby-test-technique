@@ -17,7 +17,7 @@ Installez les dependances de chaque partie du projet
 
 ``` bash
 npm install
-cd kirbee-front && yarn install
+cd kirbee-front && npm install
 cd kirbee-server && npm install
 ```
 

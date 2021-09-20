@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm:dev:*\"",
-    "dev:front": "cd kirbee-front && yarn serve",
+    "dev:front": "cd kirbee-front && npm run serve",
     "dev:server": "cd kirbee-server && npm run serve"
   },
   "author": "",
