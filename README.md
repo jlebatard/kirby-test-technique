@@ -1,6 +1,6 @@
 
 Yo. Ta quête commence maintenant. Pour ce faire, nous te fournissons un inventaire de premier ordre :
-- un squelette composé d'un front Vue 3 et d'un serveur socketio.
+- un squelette composé d'un front Vue 2 et d'un serveur socketio.
 - des assets à utiliser - ou pas
 - un design à utiliser - ou pas
 
