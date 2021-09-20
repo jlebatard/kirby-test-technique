@@ -1,6 +1,6 @@
 
 Yo. Ta quête commence maintenant. Pour ce faire, nous te fournissons un inventaire de premier ordre :
-- un squelette composé d'un front Vue 3 et d'un serveur socketio.
+- un squelette composé d'un front Vue 2 et d'un serveur socketio.
 - des assets à utiliser - ou pas
 - un design à utiliser - ou pas
 
@@ -17,7 +17,7 @@ Installez les dependances de chaque partie du projet
 
 ``` bash
 npm install
-cd kirbee-front && npm install
+cd kirbee-front && yarn install
 cd kirbee-server && npm install
 ```
 

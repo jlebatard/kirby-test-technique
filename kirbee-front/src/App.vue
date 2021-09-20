@@ -1,5 +1,5 @@
 <template>
-  <div class="App">
+  <div class="App" id="app">
     <div class="game">
       <div class="demo-scene">
         <p>{{ status }}</p>
@@ -11,32 +11,36 @@
 
 <script>
 import io from 'socket.io-client';
-import { ref } from 'vue';
+
+const socket = io(`${location.protocol}//${location.hostname}:3006`);
 
 export default {
   name: 'App',
 
-  setup () {
-    const status = ref('connecting...');
-    const socket = io(`${location.protocol}//${location.hostname}:3006`);
-    socket.on('connect', () => {
-      status.value = 'connected';
-    });
-    socket.on('disconnect', () => {
-      status.value = 'disconnected';
-    });
-    socket.on('reconnect', () => {
-      status.value = 'connected';
-    });
-    socket.on('pong', () => {
-      console.log('pong received !');
-    });
-
-    const ping = () => socket.emit('ping');
-
+  data () {
     return {
-      status,
-      ping
+      status: 'connecting...'
+    }
+  },
+
+  mounted () {
+      socket.on('connect', () => {
+        this.status = 'connected';
+      });
+      socket.on('disconnect', () => {
+        this.status = 'disconnected';
+      });
+      socket.on('reconnect', () => {
+        this.status = 'connected';
+      });
+      socket.on('pong', () => {
+        console.log('pong received !');
+      });
+  },
+
+  methods: {
+    ping () {
+      socket.emit('ping');
     }
   }
 }
