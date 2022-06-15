@@ -49,7 +49,7 @@ io.on('connection', function (socket) {
     let playerReady = players.find(player => player.id == socket.id)
     playerReady.ready = true
     socket.emit('playerReady');
-    console.log("Le joueur " + (players.findIndex(player => player.id == socket.id)+ 1) + " a rejoint la partie")
+    console.log("Le joueur " + (players.findIndex(player => player.id == socket.id) + 1) + " a rejoint la partie")
   });
 
   // action lorsque les joueurs attendent
@@ -63,10 +63,11 @@ io.on('connection', function (socket) {
 
       // compte à rebours
       await sleep(Math.floor(Math.random() * 6000) + 2000);
-      go = true
 
       // si la partie n'est pas fini, autorise les joueurs à attaquer
       if (!finish) {
+        go = true
+
         console.log("les joueurs peuvent attaquer")
         io.to(players[0].id).emit('go');
         io.to(players[1].id).emit('go');
@@ -76,7 +77,7 @@ io.on('connection', function (socket) {
 
   // action lorsqu'un joueur a attaqué
   socket.on('attack', async () => {
-    console.log("le joueur " + (players.findIndex(player => player.id == socket.id)+ 1) + " a attaqué")
+    console.log("le joueur " + (players.findIndex(player => player.id == socket.id) + 1) + " a attaqué")
     console.log("go", go)
     let winner = players.findIndex(player => go ? player.id === socket.id : player.id !== socket.id) + 1
     io.to(players[0].id).emit('finish', winner);

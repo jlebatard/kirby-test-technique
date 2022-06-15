@@ -129,6 +129,10 @@ export default {
     socket.on("playerDisconnected", () => {
       this.position = 1;
       this.name = "Kirby";
+
+      // permet de quitter la partie si un des joueurs se déconnecte
+      this.status = "joined";
+
     });
 
     // action lorsque le joueur a rejoint la partie
